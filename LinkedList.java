@@ -2,21 +2,21 @@ public class LinkedList<T> {
 	private int size;
 	private Node<T> head;
 
-	public LinkedList() {
-        head = null;
+	public LinkedList() { // create constructor
+        head = null; // initialize variables
         size = 0;
 	}
 
-	public int size() {
-		return size;
+	public int size() { // getter for size
+		return size; 
 	}
 
-	public Node<T> peek() {
+	public Node<T> peek() { // peek function that returns head
 		return head;
 	}
 
-	public void add(T t) {
-		if(head != null){
+	public void add(T t) { // add to linked list
+		if(head != null){ // if head does not equal null, adds to list
             Node<T> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
