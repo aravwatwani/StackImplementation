@@ -1,48 +1,42 @@
 import java.util.ArrayList;
 
-public class QueQue<T> {
-	private Stack<T> data1;
-	private Stack<T> data2;
+public class Queue<T> {
+	private ArrayList<T> data;
 	private int size;
 
-	public QueQue() {
-		data1 = new Stack<T>(); // instantiate new stacks
-		data2 = new Stack<T>(); // instantiate new stacks
+	public Queue() {
+		data = new ArrayList<T>();
 	}
 
-	public int size() { // returns size
+	public int size() {
 		return size;
 	}
 
-	public void add(T t) { // add method that pushes from first stack
-		data1.push(t);
+	public void add(T t) {
+		data.add(t);
 		size++;
 	}
 
-	public T remove() { // remove method that pops from first stack and pushes
-						// to second stack
-		if (data1.isEmpty()) {
-			return null;
-		}
-
-		if (data2.isEmpty()) {
-			while (!data1.isEmpty()) {
-				data2.push(data1.pop());
-				size--;
-			}
-		}
-		return data2.pop();
+	public T remove() {
+		T t = data.remove(0);
+		size--;
+		return t;
 	}
 
-	public T peek() {
-		for (int i = 0; i < size; i++) {
-			data2.push(data1.pop());
+	public T peek() { //
+		return data.get(0);
+	}
+
+	public boolean isEmpty() {
+		if (data.size() == 0) {
+			return true;
 		}
-		return data2.pop();
+		return false;
+	}
+
+	// override so stack objects can be printed
+	public String toString() {
+		return data.toString();
 	}
 
 }
-		                   
-		        		                   
-		        		                   
-		        

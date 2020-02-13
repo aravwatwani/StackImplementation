@@ -1,22 +1,14 @@
-public class Node<T>{
+public class Node<T> {
+	private T data;
+	public Node<T> next;
 
-    private int size;
-    public Node<T> next; 
-    private Node<T> data;
+	public Node(T t) {
+		data = t;
+	}
 
-
-    public Node(){
-
-    }
-
-    public int size(){
-        return size;
-    }
-
-    public Node<T> getData(){
-        return data;
-    }
-
-
-
+	public Node<T> next() { // return next ref.
+		return next;
+	}
+	
+	
 }
