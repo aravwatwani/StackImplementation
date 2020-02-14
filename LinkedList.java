@@ -2,21 +2,20 @@ public class LinkedList<T> {
 	private int size;
 	private Node<T> head;
 
-	public LinkedList() { // create constructor
-        head = null; // initialize variables
-        size = 0;
+	public LinkedList() {
+    
 	}
 
-	public int size() { // getter for size
-		return size; 
+	public int size() {
+		return size;
 	}
 
-	public Node<T> peek() { // peek function that returns head
+	public Node<T> peek() {
 		return head;
 	}
 
-	public void add(T t) { // add to linked list
-		if(head != null){ // if head does not equal null, adds to list
+	public void add(T t) {
+		if(head != null){
             Node<T> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
@@ -36,15 +35,12 @@ public class LinkedList<T> {
 	}
 
 	public Node<T> remove() {
+		Node<T> temp = head;
 		if(head != null){
-		    Node<T> temp = head;
-		    temp = temp.next;
+		    head = head.next;
 		    size--;
-            return temp;
-		} else{
-		    return null;
 		}
-		
+        return temp;
 	}
 
 	public Node<T> remove(int i) {
@@ -55,7 +51,7 @@ public class LinkedList<T> {
             if(i + 1 <= size && i >= 0){
                 int count = 0;
                 Node<T> temp = head;
-                while(count != i + 1){
+                while(count != i - 1){
                     temp = temp.next;
                     count++;
                 }
@@ -69,6 +65,9 @@ public class LinkedList<T> {
 	}
 }
 		                   
+		        		                   
+		        		                   
+		        		                   
 		        		                   
 		        		                   
 		        
