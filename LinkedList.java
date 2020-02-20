@@ -80,12 +80,6 @@ public class LinkedList<T> {
         return temp;
         
 	}
-	@Override
-	public String toString(){
-		for(LinkedList myNums: Node<T>){
-			System.out.println(Node);
-			//May be you will be required to override toString in your custom domain class to make it more useful
-		  }
 	
 
 }
